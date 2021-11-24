@@ -1,0 +1,6 @@
+[webworkers]
+worker1 ansible_host=3.66.165.144
+worker2 ansible_host=3.127.37.34
+
+[db]
+db1 ansible_host=18.192.20.42 

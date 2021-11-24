@@ -1,0 +1,14 @@
+-
+    name: 'Install required packages'
+    hosts: worker2
+    vars:
+        packages:
+            - httpd
+            - nodejs 
+           
+    tasks:
+        -
+            yum:
+                name: '{{ item }}'
+                state: present
+            with_items: '{{ packages }}'

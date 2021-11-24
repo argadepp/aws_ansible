@@ -1,0 +1,19 @@
+-
+  name: 'Service module testing'
+  hosts: worker2
+  tasks:
+          - name: 'Copying code'
+            copy:
+                    src: /tmp/index.html
+                    dest: /var/www/html
+          - name: 'Service of httpd'
+            service: name=httpd state=started
+            when: 'ansible_host=="worker2"'
+          -
+            shell: 'cat /etc/resolv.conf'
+            register: command_output
+          -
+            shell: 'echo "nameserver 10.0.250.10" >> /etc/resolv.conf'
+            when: 'command_output.stdout.find("10.0.250.10") == -1'
+
+        

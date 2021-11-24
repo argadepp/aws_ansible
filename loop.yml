@@ -1,0 +1,12 @@
+-
+  name: 'Creating users using loop'
+  hosts: worker2
+  vars:
+          uss:
+          - name: admin
+          - name: bksys
+          - name: axiomadm
+           
+  tasks:
+          - user: name= '{{ item.name }}' state=present
+            with_items: '{{ uss}}' 

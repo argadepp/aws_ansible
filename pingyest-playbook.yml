@@ -1,0 +1,6 @@
+-
+  name: Ping test demo
+  hosts: db
+  tasks:
+          - name: Ping
+            ping:

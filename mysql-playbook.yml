@@ -1,0 +1,8 @@
+-
+  name: 'Install and configure mysql'
+  hosts: db1
+  user: root
+  roles:
+          - fauust.mariadb 
+  become: true
+            
